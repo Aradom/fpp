@@ -1,10 +1,6 @@
 package week3.prog3;
 
-import java.text.Format;
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.GregorianCalendar;
-
 
 public class Employee {
 
@@ -22,10 +18,9 @@ public class Employee {
 		 * GregorianCalendar(yearOfHire,monthOfHire-1,dayOfHire); hireDate =
 		 * cal.getTime();
 		 */
-		
+		this.hireDate = LocalDate.of(yearOfHire, monthOfHire, dayOfHire);
+
 	}
-
-
 
 	// instance methods
 	public String getName() {
@@ -46,50 +41,44 @@ public class Employee {
 	public void createNewRetirement(double startAmount) {
 		// implement
 		retirementAcct = new Account(this, AccountType.RETIREMENT, startAmount);
-
 	}
 
 	public String getFormattedAcctInfo() {
 		// implement
-	  StringBuilder sBuilder = new StringBuilder();
-	  String template = "ACCOUNT INFO FOR: " + getName() + "\n";
-	  boolean isTemplated = false;
-		
-		if(savingsAcct != null) {
-			if(!isTemplated) {
+		StringBuilder sBuilder = new StringBuilder();
+		String template = "ACCOUNT INFO FOR: " + getName() + "\n";
+		boolean isTemplated = false;
+
+		if (savingsAcct != null) {
+			if (!isTemplated) {
 				sBuilder.append(template);
 				isTemplated = true;
 			}
-			String savingInfo =  "Account type saving: \n" + savingsAcct.toString() +"\n"; 
+			String savingInfo = "Account type saving: \n" + savingsAcct.toString() + "\n";
 			sBuilder.append(savingInfo);
 		}
-		if(checkingAcct != null) {
-			if(!isTemplated) {
+		if (checkingAcct != null) {
+			if (!isTemplated) {
 				sBuilder.append(template);
 				isTemplated = true;
 			}
-			
-			
-			String checkingInfo = "Account type Checking: \n" + checkingAcct.toString() + "\n"; 
+
+			String checkingInfo = "Account type Checking: \n" + checkingAcct.toString() + "\n";
 			sBuilder.append(checkingInfo);
-		};
-		if(retirementAcct != null) {
-			if(!isTemplated) {
+		}
+		;
+		if (retirementAcct != null) {
+			if (!isTemplated) {
 				sBuilder.append(template);
 				isTemplated = true;
 			}
-			
-			
-			String retirementInfo = "Account type Retirement: \n" + retirementAcct.toString() + "\n"; 
+
+			String retirementInfo = "Account type Retirement: \n" + retirementAcct.toString() + "\n";
 			sBuilder.append(retirementInfo);
 		}
-	
-	
-		
 		return sBuilder.toString();
 	}
-	
-	
+
 //	
 //	private String templateHelperAradom(boolean b, StringBuilder sb) {
 //		if(!b) {
@@ -98,7 +87,6 @@ public class Employee {
 //		}
 //		return "";
 //	}
-	
 
 	public void deposit(AccountType acctType, double amt) {
 		// implement
@@ -130,10 +118,9 @@ public class Employee {
 			return false;
 		}
 	}
-	
+
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return getFormattedAcctInfo();
 	}
 
