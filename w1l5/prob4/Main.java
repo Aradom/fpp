@@ -14,7 +14,10 @@ public class Main {
 		
 		for(Employee e : employees) {
 			totalSalaryOfEmployees += e.getPayment();
+			System.out.println();
+			System.out.println(e.toString());
 		}
+		System.out.println();
 		System.out.println("The total salary of all the employees is: " + totalSalaryOfEmployees);
 
 	}

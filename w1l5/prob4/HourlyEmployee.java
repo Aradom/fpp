@@ -19,5 +19,11 @@ public class HourlyEmployee extends Employee{
 	public double getPayment() {
 		return wage*hours;
 	}
+	
+	@Override
+	public String toString() {
+		String parentString = super.toString();
+		return parentString + "Wage: " + wage + "hours " + hours ;
+	}
 
 }

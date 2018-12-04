@@ -17,5 +17,10 @@ public class BasePlusComissionEmployee extends ComissionEmployee {
 		return (baseSalary + (getGrossSales() * getComissionRate())); 
 	}
 	
+	@Override
+	public String toString() {
+		String superClassStr = super.toString();
+		return superClassStr + " Base Salary: " + baseSalary;
+	}
 
 }

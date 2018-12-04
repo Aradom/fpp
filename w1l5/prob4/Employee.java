@@ -38,5 +38,11 @@ public abstract class Employee {
 		this.socialSecurityNumber = socialSecurityNumber;
 	}
 	
+	@Override 
+	public String toString() {
+		return "First Name: " + firstName + "Last Name: " +  lastName + 
+				"Social Security Number: " + socialSecurityNumber;
+	}
+	
 
 }

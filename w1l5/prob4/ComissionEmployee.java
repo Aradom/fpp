@@ -32,5 +32,11 @@ public class ComissionEmployee extends Employee {
 	public double getPayment() {
 		return grossSales * comissionRate;
 	}
+	
+	@Override
+	public String toString() {
+		String parentString = super.toString();
+		return parentString + "Gross Sales: " + grossSales + "Comission Rate: " + comissionRate;
+	}
 
 }
